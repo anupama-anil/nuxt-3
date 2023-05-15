@@ -12,10 +12,36 @@
 </template>
 
 <script setup>
+definePageMeta({
+  pageTransition: {
+    name: 'rotate'
+  }
+})
 function enableCustomLayout() {
   setPageLayout("custom");
 }
 function enableDefaultLayout() {
   setPageLayout('default')
 }
+useHead({
+  title: 'My App',
+   link: [
+    {
+      rel: 'preconnect',
+      href: 'https://fonts.googleapis.com'
+    },
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Roboto&display=swap',
+      crossorigin: ''
+    }
+  ],
+  meta: [
+    { name: 'description', content: 'My amazing site.' }
+  ],
+  bodyAttrs: {
+    class: 'test'
+  },
+  script: [ { innerHTML: 'console.log(\'Hello world\')' } ]
+})
 </script>
